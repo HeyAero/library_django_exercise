@@ -20,3 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls, name='library-admin'),
     path('', include('public.urls')),
 ]
+
+handler404 = 'public.views.not_found_404'
