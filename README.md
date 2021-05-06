@@ -14,6 +14,6 @@ Made by Aaron & Ravil
 - [x] Create models for Book and Author
 - [x] Authors have a name
 - [x] Books have a title and a Foreign Key for author
-- [ ] Make and run migrations
-- [ ] Add your models to your admin dashboard and create some records in the GUI
-- [ ] Update your views to take data from the database instead of the dummy data list
+- [x] Make and run migrations
+- [x] Add your models to your admin dashboard and create some records in the GUI
+- [x] Update your views to take data from the database instead of the dummy data list
