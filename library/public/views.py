@@ -12,5 +12,5 @@ book_data = { "book_data": [
 def home(req):
   return render(req, 'public/home.html', book_data)
 
-def show_book(req):
-  return render(req, 'public/books.html', book_data)
+def show_book(req, id):
+  return render(req, 'public/books.html', book_data["book_data"][id-1])
