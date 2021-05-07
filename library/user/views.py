@@ -10,5 +10,9 @@ def register(req):
             username = form.cleaned_data.get('username')
             message.success(req, f'Welcome, {username}!')
             return redirect('library-home')
+    else:
+        form = UserRegistrationForm()
+        data = {'form': form}
+        return render(req, 'registration.html', data)
 
 # Create your views here.

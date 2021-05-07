@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '[::1]']
 # Application definition
 
 INSTALLED_APPS = [
+    'user.apps.UserConfig',
     'public.apps.PublicConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -119,3 +120,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGIN_REDIRECT_URL = 'library-home'
+LOGIN_URL = 'login'
