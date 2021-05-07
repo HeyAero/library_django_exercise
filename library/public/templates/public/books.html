@@ -2,6 +2,12 @@
 
 {% block content %}
   {% if user.is_authenticated%}
-    <h1>{{book_data}}</h1>
+    <h1>{{book.title}}</h1>
+    <p>{{book.author.name}}</p>
+    {% if book.borrower == user %}
+      <p>Thanks for borrowing our book!</p>
+    {% else %}
+      <p>I have been borrowed by {{book.borrower.username}}</p>
+    {% endif %}
   {% endif %}
 {% endblock content %}

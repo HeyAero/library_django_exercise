@@ -14,6 +14,6 @@ def home(req):
 
 @login_required
 def show_book(req, id):
-  print(Book.objects.get(pk=id))
-  book_data = { 'book_data': Book.objects.get(pk=id) }
+  book = get_object_or_404(Book, pk=id)
+  book_data = { 'book': book }
   return render(req, 'public/books.html', book_data)

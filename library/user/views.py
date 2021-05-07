@@ -9,7 +9,7 @@ def register(req):
             form.save()
             username = form.cleaned_data.get('username')
             message.success(req, f'Welcome, {username}!')
-            return redirect('library-home')
+            return redirect('public-home')
     else:
         form = UserRegistrationForm()
         data = {'form': form}

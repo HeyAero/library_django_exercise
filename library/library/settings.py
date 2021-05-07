@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'r-%*9mh2q@)=wm5nxs-^q@3(0&g0iu_6%ktutg0xl0#b)wzekv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '[::1]']
 
@@ -121,5 +121,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = 'library-home'
+LOGIN_REDIRECT_URL = 'public-home'
 LOGIN_URL = 'login'
