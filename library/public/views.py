@@ -19,7 +19,7 @@ def show_book(req, id):
   if req.method == 'POST':
     form = BorrowBookForm(req.POST)
     if form.is_valid():
-      book.owner = req.user
+      book.borrower = req.user
       book.save()
       return redirect('public-books', id=id)
   else:

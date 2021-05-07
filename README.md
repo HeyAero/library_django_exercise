@@ -31,7 +31,7 @@ Made by Aaron & Ravil
 ### Tasks(4):
 - [x] Create a new book form accessible at books/new
 - [x] On success, the form redirects to the new book's show page
-- [] Create a button on the book show page
-- [] If the book is available, on clicking the button, the current User becomes the borrower of that book
-- [] If the book is on loan by another User, current User sees disabled button
+- [x] Create a button on the book show page
+- [x] If the book is available, on clicking the button, the current User becomes the borrower of that book
+- [x] If the book is on loan by another User, current User sees disabled button
 - [] If the book is on loan by the current User, on clicking the button, the book is returned

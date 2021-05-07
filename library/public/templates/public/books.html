@@ -4,6 +4,13 @@
   {% if user.is_authenticated%}
     <h1>{{book.title}}</h1>
     <p>{{book.author.name}}</p>
+    {% if not book.borrower %}
+      <form method='POST'>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Borrow a book">
+      </form>
+    {% endif %}  
     {% if book.borrower == user %}
       <p>Thanks for borrowing our book!</p>
     {% else %}
