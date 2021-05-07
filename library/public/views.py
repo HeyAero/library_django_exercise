@@ -2,6 +2,7 @@
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required
+from .forms import NewBookForm
 
 from .models import Author, Book
 

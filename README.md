@@ -29,8 +29,8 @@ Made by Aaron & Ravil
 - [x] Update your book show template to show if it is available to loan or not
 
 ### Tasks(4):
-- [] Create a new book form accessible at books/new
-- [] On success, the form redirects to the new book's show page
+- [x] Create a new book form accessible at books/new
+- [x] On success, the form redirects to the new book's show page
 - [] Create a button on the book show page
 - [] If the book is available, on clicking the button, the current User becomes the borrower of that book
 - [] If the book is on loan by another User, current User sees disabled button
