@@ -1,6 +1,7 @@
 # libary views file
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
+from django.contrib.auth.decorators import login_required
 
 from .models import Author, Book
 
@@ -11,6 +12,7 @@ def home(req):
   book_data = { 'book_data': Book.objects.all()}
   return render(req, 'public/home.html', book_data)
 
+@login_required
 def show_book(req, id):
   print(Book.objects.get(pk=id))
   book_data = { 'book_data': Book.objects.get(pk=id) }

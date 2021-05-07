@@ -1,6 +1,7 @@
 {% extends "public/base.html" %}
 
 {% block content %}
-  <h1>{{book_data}}</h1>
-  
+  {% if user.is_authenticated%}
+    <h1>{{book_data}}</h1>
+  {% endif %}
 {% endblock content %}
