@@ -2,7 +2,7 @@
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required
-from .forms import NewBookForm, BorrowBookForm
+from .forms import NewBookForm, BorrowBookForm, UnborrowBookForm
 
 from .models import Author, Book
 
@@ -18,15 +18,27 @@ def show_book(req, id):
   book = get_object_or_404(Book, pk=id)
   if req.method == 'POST':
     form = BorrowBookForm(req.POST)
-    if form.is_valid():
-      book.borrower = req.user
-      book.save()
-      return redirect('public-books', id=id)
+    form2 = UnborrowBookForm(req.POST)
+    if book.borrower == req.user:
+      if form2.is_valid():
+        print('Test2')
+        book.borrower = None
+        book.save()
+        return redirect('public-books', id=id)
+    else:
+      if form.is_valid():
+        print('Test1')
+        book.borrower = req.user
+        book.save()
+        return redirect('public-books', id=id)
+    
   else:
     form = BorrowBookForm(initial={'borrower': req.user})
+    form2 = UnborrowBookForm(initial={'borrower': req.user})
   book_data = { 
               'book': book, 
-              'form': form
+              'form': form,
+              'form2': form2
               }
   return render(req, 'public/books.html', book_data)
   

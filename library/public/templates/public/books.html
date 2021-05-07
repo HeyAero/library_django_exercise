@@ -12,6 +12,11 @@
       </form>
     {% endif %}  
     {% if book.borrower == user %}
+      <form method='POST'>
+        {% csrf_token %}
+        {{form2.as_p}}
+        <input type="submit" value="Return book">
+      </form>
       <p>Thanks for borrowing our book!</p>
     {% else %}
       <p>I have been borrowed by {{book.borrower.username}}</p>

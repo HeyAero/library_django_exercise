@@ -11,3 +11,9 @@ class BorrowBookForm(forms.ModelForm):
         model = Book
         fields = ['borrower']
         widgets = {'borrower': forms.HiddenInput()}
+
+class UnborrowBookForm(forms.ModelForm):
+    class Meta:
+        model = Book
+        fields = ['borrower']
+        widgets = {'borrower': forms.HiddenInput()}
