@@ -17,3 +17,15 @@ def show_book(req, id):
   book = get_object_or_404(Book, pk=id)
   book_data = { 'book': book }
   return render(req, 'public/books.html', book_data)
+
+@login_required
+def create_book(req):
+  if req.method == 'POST':
+    book = NewBookForm(req.POST)
+    if book.is_valid():
+      id = book.save().id
+      return redirect('public-books', id=id)
+  else:
+    form = NewBookForm()
+    data = {'form': form}
+    return render(req, 'public/new.html', data)

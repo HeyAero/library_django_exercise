@@ -21,9 +21,17 @@ Made by Aaron & Ravil
 ### Tasks(3):
 - [x] Create register, login and logout routes
 - [x] Use the UserCreationForm to complete your templates
-- [] Register some new users via your registration form
+- [x] Register some new users via your registration form
 - [x] Make the book show route only available to logged in users
-- [] Add a new field of 'borrower' to the Book model as a 
-- [] Foreign Key to User
-- [] In your admin dashboard, assign some books a borrower
-- [] Update your book show template to show if it is available to loan or not
+- [x] Add a new field of 'borrower' to the Book model as a 
+- [x] Foreign Key to User
+- [x] In your admin dashboard, assign some books a borrower
+- [x] Update your book show template to show if it is available to loan or not
+
+### Tasks(4):
+- [] Create a new book form accessible at books/new
+- [] On success, the form redirects to the new book's show page
+- [] Create a button on the book show page
+- [] If the book is available, on clicking the button, the current User becomes the borrower of that book
+- [] If the book is on loan by another User, current User sees disabled button
+- [] If the book is on loan by the current User, on clicking the button, the book is returned
